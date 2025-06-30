@@ -1,8 +1,20 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT||8080;
 
+
+
+//DataBase Part
+const mongoose = require('mongoose');
+const DBURL = process.env.ATLASDB_URL;
+// MongoDB Connection
+mongoose.connect(DBURL)
+    .then(() => console.log('DB Connected...'))
+    .catch(err => console.log(err));
+
+
+    
 const methodOverride = require('method-override');
 // const session = require('express-session');
 // const passport = require('passport');
@@ -11,15 +23,6 @@ const flash = require('connect-flash');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const nodemailer = require('nodemailer')
-
-
-//DataBase Part
-// const mongoose = require('mongoose');
-// const DBURL = process.env.ATLASDB_URL;
-// MongoDB Connection
-// mongoose.connect(DBURL)
-//     .then(() => console.log('DB Connected...'))
-//     .catch(err => console.log(err));
 
 
   // App Configuration
