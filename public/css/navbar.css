@@ -102,6 +102,13 @@ body {
   margin-bottom: 20px;
   color: white;
 }
+.banner video {
+  object-fit: cover;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
 .custom-red-btn {
   background-color: #8A0000;
   color: white;
