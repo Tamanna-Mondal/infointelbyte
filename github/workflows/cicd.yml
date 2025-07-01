@@ -3,7 +3,8 @@ name: Deploy to Azure App Service
 on:
   push:
     branches:
-      - infointelbyte
+  - master
+  # Change this if your actual branch is different
 
 jobs:
   build-and-deploy:
