@@ -1,0 +1,24 @@
+name:Deploy to Azure App Service
+
+on: 
+  push: 
+     Branches:
+       - infointelbyte
+jobs:
+  build-and-deploy:
+     runs-on:ubantu-lastest
+    steps:
+      - name: checkout source
+      uses: actions/checkout@v3
+      - name: setup node.js version
+      users: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        -name: Install Dependancies 
+        run: npm Install
+        -name: Deploy to Azure App Service
+         uses: azure/webapps-deploy@v2
+      with:
+        app-name: Intelbyte
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: .
