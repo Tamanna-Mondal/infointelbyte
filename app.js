@@ -1,17 +1,17 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT||8080;
+const PORT = 8080;
 
 
 
 //DataBase Part
-const mongoose = require('mongoose');
-const DBURL = process.env.ATLASDB_URL;
+// const mongoose = require('mongoose');
+// const DBURL = process.env.ATLASDB_URL;
 // MongoDB Connection
-mongoose.connect(DBURL)
-    .then(() => console.log('DB Connected...'))
-    .catch(err => console.log(err));
+// mongoose.connect(DBURL)
+//     .then(() => console.log('DB Connected...'))
+//     .catch(err => console.log(err));
 
 
     
